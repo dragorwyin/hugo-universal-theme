@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  {{ partial "head.html" . }}
-
-  <body>
-
-    <div id="all">
-
-        <header>
-
-          {{ partial "nav.html" . }}
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }}</title>
+    <meta name="author" content="{{ .Site.Author.name }}" />
+    <meta name="keywords" content="">
+    {{ if .Description }}
+    <meta name="description" content="{{ .Description }}">
+    {{ end }}
+    <!-- {{ partial "head.html" . }} -->
+    <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/aerial-main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ .Site.BaseURL }}css/aerial-ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ .Site.BaseURL }}css/aerial-ie9.css" /><![endif]-->
+  </head>
+  <body class="loading" id="aerial">
+    <div id="wrapper">
+      <div id="bg" {{ with .Site.Params.bg_scroll}} class="no-scroll" {{end}}></div>
+      <div id="overlay"></div>
+      <div id="main">
+        <!-- Header -->
+        <header id="header">
+          <h1>{{ .Site.Params.author | safeHTML }}</h1>
+          <p>{{ .Site.Params.about | safeHTML }}</p>
+          <nav>
+            <ul>
+              {{ range .Site.Params.social }}
+              <li>
+                <a href="{{ .link | safeURL }}" class="icon fa-{{ .icon }}">
+                  <span class="label">{{ .medium }}</span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </nav>
         </header>
-
-        {{ partial "carousel.html" . }}
-
-        {{ partial "features.html" . }}
-
-        {{ partial "testimonials.html" . }}
-
-        {{ partial "see_more.html" . }}
-
-        {{ partial "recent_posts.html" . }}
-
-        {{ partial "clients.html" . }}
-
-        {{ partial "footer.html" . }}
-
+        <!-- Footer -->
+        <footer id="footer">
+          <span class="copyright">&copy; {{ .Site.Params.copyright }}.</span>
+        </footer>
+      </div>
     </div>
-    <!-- /#all -->
-
     {{ partial "scripts.html" . }}
-
+    <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+    <script>
+      window.onload = function() {
+        document.body.className = '';
+      };
+      window.ontouchmove = function() {
+        return false;
+      };
+      window.onorientationchange = function() {
+       document.body.scrollTop = 0;
+      };
+    </script>
   </body>
 </html>
