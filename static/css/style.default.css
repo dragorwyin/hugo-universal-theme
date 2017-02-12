@@ -3060,9 +3060,6 @@ fieldset[disabled] .btn-template-primary.active {
   border-bottom: none;
 }
 .navbar-default .navbar-brand {
-  font-weight: 300;
-  font-size: 18px;
-  padding: 23px 15px;
   color: #fff;
 }
 .navbar-default .navbar-brand:hover,
