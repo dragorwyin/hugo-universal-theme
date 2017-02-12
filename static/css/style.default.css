@@ -3067,7 +3067,7 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #3b3b3b;
+  color: #d6d6d6;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
