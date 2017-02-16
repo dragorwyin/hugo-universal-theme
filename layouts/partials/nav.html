@@ -20,8 +20,10 @@
 
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
+                    {{ $title := .Title }}
                     {{ range .Site.Params.menu }}
-                    <li class="dropdown">
+                        {{ $tempName := print .name "s" }}
+                    <li class='dropdown {{ if or (eq $title .name) (and (eq $title $tempName)) }}active{{ end }}'>
                         <a href="{{ .url }}">{{ .name }}</a>
                     </li>
                     {{ end }}
