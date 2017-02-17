@@ -1730,8 +1730,6 @@ fieldset[disabled] .btn-template-primary.active {
   background: url(../img/texture-bw.png) center center repeat;
   padding: 8px 0;
   margin-bottom: 40px;
-  background-blend-mode: overlay;
-  background-color: #789a78;
 }
 #heading-breadcrumbs.no-mb {
   margin-bottom: 0;
