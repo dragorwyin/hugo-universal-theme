@@ -26,6 +26,31 @@
 		line-height: 1;
 	}
 
+	h1 {
+		color: #fff;
+	}
+
+	#footer {
+    background: initial;
+    padding: initial;
+    color: #fff;
+	}
+
+	a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
+	}
+
+	.icon {
+     display: inline-block;
+     width: initial;
+     height: initial;
+     color: #fff;
+     line-height: initial;
+     border: none;
+     font-size: initial;
+}
+
 	ol, ul {
 		list-style: none;
 	}

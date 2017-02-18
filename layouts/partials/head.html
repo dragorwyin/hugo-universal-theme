@@ -7,7 +7,7 @@
   <title>{{ if eq .Title "Blogs" }} Newest Posts {{ else }} {{ .Title }} {{ end }}</title>
 
   <meta name="author" content="{{ .Site.Author.name }}" />
-  <meta name="keywords" content="">
+  <meta name="keywords" content="{{ .Site.Params.Keywords }}">
 
   {{ if .Description }}
   <meta name="description" content="{{ .Description }}">

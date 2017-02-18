@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="all,follow">
-    <meta name="googlebot" content="index,follow,snippet,archive">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }}</title>
-    <meta name="author" content="{{ .Site.Author.name }}" />
-    <meta name="keywords" content="">
-    {{ if .Description }}
-    <meta name="description" content="{{ .Description }}">
-    {{ end }}
+    {{ partial "head.html" . }}
     <!-- {{ partial "head.html" . }} -->
     <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/aerial-main.css" />
-    <meta name="google-site-verification" content="Ek5XAbBtCLzyFZI_JJeW5rZ0rOtNBru_cYqR_TbBEzY" />
     <!--[if lte IE 8]><link rel="stylesheet" href="{{ .Site.BaseURL }}css/aerial-ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="{{ .Site.BaseURL }}css/aerial-ie9.css" /><![endif]-->
   </head>
