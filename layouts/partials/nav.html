@@ -24,7 +24,7 @@
                     {{ range .Site.Params.menu }}
                         {{ $tempName := print .name "s" }}
                     <li class='dropdown {{ if or (eq $title .name) (and (eq $title $tempName)) }}active{{ end }}'>
-                        <a href="{{ .url }}">{{ .name }}</a>
+                        {{ .Pre }}<a href="{{ .url }}">{{ .name }}</a>
                     </li>
                     {{ end }}
                 </ul>
